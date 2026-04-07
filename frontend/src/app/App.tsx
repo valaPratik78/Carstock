@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
+import { Footer } from './components/Footer';
 import { Home } from './components/pages/Home';
 import { Mechanics } from './components/pages/Mechanics';
 import { Booking } from './components/pages/Booking';
@@ -13,19 +14,22 @@ import { Modify } from './components/pages/Modify';
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#f5f2ee]">
+      <div className="min-h-screen bg-[#f4f6f9] flex flex-col">
         <Navigation />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/mechanics" element={<Mechanics />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/used-cars" element={<UsedCars />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/modify" element={<Modify />} />
-        </Routes>
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/mechanics" element={<Mechanics />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/used-cars" element={<UsedCars />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/modify" element={<Modify />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );
